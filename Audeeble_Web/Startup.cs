@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,9 +23,14 @@ namespace Audeeble_Web
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-            // Prise en charge des contrôleurs et des vues associées
-            // Remplace services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddControllersWithViews();
+            // Désactivation des EndPoint pour utiliser les routes standards
+            // Activation de MVC en version 3.0
+            services
+                .AddMvc(options => 
+                {
+                    options.EnableEndpointRouting = false;
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         /// <summary>
@@ -55,18 +61,21 @@ namespace Audeeble_Web
             // Utilisation des fichiers statiques
             app.UseStaticFiles();
 
-            // Utilisation des routes
-            app.UseRouting();
-
             // Utilisation des autorisations
             app.UseAuthorization();
 
             // Configuration des routes
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}"
+                );
             });
         }
     }
