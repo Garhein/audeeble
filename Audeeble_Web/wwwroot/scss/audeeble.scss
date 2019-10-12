@@ -1,0 +1,36 @@
+﻿@charset 'UTF-8';
+
+/**
+ * Fichier:       audeeble.scss
+ * Description:
+ * Version:       1.0
+ * Copyright:     2019
+ * Auteur:        xavier.villemin at gmail.com
+ **/
+
+
+//
+// Surcharge des variables Bootstrap
+//
+
+$body-bg:                       #f5f5f5;
+$body-color:                    #545E6C;
+
+//
+// Import de Bootstrap
+//
+
+@import "../lib/bootstrap/scss/bootstrap";
+
+//
+// Variables personnalisées
+//
+
+$disabled-opacity:              0.5;
+
+$blue:                          #42A8C0;
+$blue-darker:                   #2D7788;
+$blue-lighter:                  #7BC2D3;
+
+$timeline-line-color:           #c8cfd8;
+$timeline-item-color:           #6f8098;
