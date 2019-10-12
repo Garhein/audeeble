@@ -26,6 +26,8 @@ namespace Audeeble_Web
                     {
                         config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
                     }
+
+                    config.AddJsonFile("apisettings.json", optional: false, reloadOnChange: true);
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

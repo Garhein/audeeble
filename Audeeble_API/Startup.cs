@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +24,10 @@ namespace Audeeble_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Base de données
+            services.AddDbContext<AudeebleContextDB>(
+                options => options.UseSqlServer(this.Configuration["AudeebleContextDB"]));
         }
 
         /// <summary>
@@ -53,6 +58,6 @@ namespace Audeeble_API
             {
                 endpoints.MapControllers();
             });
-        }
+        }           
     }
 }
