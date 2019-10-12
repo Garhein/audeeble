@@ -1,8 +1,10 @@
 ﻿/// <binding ProjectOpened='watch' />
 
 // Chargement des dépendances
-var gulp = require('gulp'),
-    sass = require('gulp-sass');
+var gulp    = require('gulp'),
+    sass    = require('gulp-sass'),
+    minify  = require('gulp-csso'),
+    rename  = require('gulp-rename');
 
 /***************************/
 /** Définition des tâches **/
@@ -17,30 +19,28 @@ gulp.task('css', function () {
 });
 
 // Tâche de "prod" : minification CSS
-/*
 gulp.task('minify', function () {
     return gulp
         .src('./wwwroot/css/*.css')
-        .pipe(plugins.csso())
-        .pipe(plugins.rename({ suffix: '.min' }))
+        .pipe(minify())
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('./wwwroot/css/'));
 });
-*/
 
 /**********************/
 /** Ajout des tâches **/
 /**********************/
 
 // Tâche "build"
-gulp.task('build', gulp.parallel('css'));
+gulp.task('build', gulp.series('css'));
 
 // Tâche "prod" : Build + minify
-// gulp.task('prod', gulp.parallel('build', 'minify'));
+gulp.task('prod', gulp.series('build', 'minify'));
 
 // Tâche "watch" : surveillance des fichiers SASS
 gulp.task('watch', function () {
-    gulp.watch('./wwwroot/scss/**/*.scss', gulp.parallel('build'));
+    gulp.watch('./wwwroot/scss/**/*.scss', gulp.series('build'));
 });
 
 // Tâche par défaut
-gulp.task('default', gulp.parallel('build'));
+gulp.task('default', gulp.series('build'));
