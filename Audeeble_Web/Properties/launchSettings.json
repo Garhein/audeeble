@@ -3,7 +3,7 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:52385/Tiers/Liste",
+      "applicationUrl": "http://localhost:52385/",
       "sslPort": 44318
     }
   },
