@@ -3,12 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audeeble_Web", "Audeeble_Web\Audeeble_Web.csproj", "{8BB6B497-0295-40F1-85DB-921A6D1A7585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audeeble_Web", "Audeeble_Web\Audeeble_Web.csproj", "{8BB6B497-0295-40F1-85DB-921A6D1A7585}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B0F6358-769A-49E0-AE3F-2E35DCB12E27}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audeeble_Shared", "Audeeble_Shared\Audeeble_Shared.csproj", "{584F57DD-7BB0-44D1-B055-9D691537B177}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audeeble_API", "Audeeble_API\Audeeble_API.csproj", "{3B35985F-4776-4C40-B6D7-B2EDDCFBDE9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +24,14 @@ Global
 		{8BB6B497-0295-40F1-85DB-921A6D1A7585}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BB6B497-0295-40F1-85DB-921A6D1A7585}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BB6B497-0295-40F1-85DB-921A6D1A7585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584F57DD-7BB0-44D1-B055-9D691537B177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584F57DD-7BB0-44D1-B055-9D691537B177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584F57DD-7BB0-44D1-B055-9D691537B177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584F57DD-7BB0-44D1-B055-9D691537B177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B35985F-4776-4C40-B6D7-B2EDDCFBDE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B35985F-4776-4C40-B6D7-B2EDDCFBDE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B35985F-4776-4C40-B6D7-B2EDDCFBDE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B35985F-4776-4C40-B6D7-B2EDDCFBDE9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
