@@ -6,7 +6,7 @@ namespace Audeeble_Shared.Attributes
     /// Attribut personnalisé permettant la génération automatique d'un <see cref="Microsoft.AspNetCore.Http.QueryString"/>.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    public class QueryStringAttribute : Attribute
+    public class QueryStringParameterAttribute : Attribute
     {
         public string UriParameterName { get; set; }
 
@@ -14,7 +14,7 @@ namespace Audeeble_Shared.Attributes
         /// Constructeur.
         /// </summary>
         /// <param name="uriParameterName">Nom du paramètre dans l'URI.</param>
-        public QueryStringAttribute(string uriParameterName)
+        public QueryStringParameterAttribute(string uriParameterName)
         {
             this.UriParameterName = uriParameterName;
         }

@@ -11,7 +11,7 @@ namespace Audeeble_Shared.Models
     public class QueryStringModel
     {
         /// <summary>
-        /// Construction du composant de l'URI, en fonction de l'attribut personnalisé <see cref="QueryStringAttribute"/>.
+        /// Construction du composant de l'URI, en fonction de l'attribut personnalisé <see cref="QueryStringParameterAttribute"/>.
         /// </summary>
         /// <returns><see cref="string"/> représentant les paramètres de l'URI.</returns>
         public string ToUriComponent()
@@ -22,7 +22,7 @@ namespace Audeeble_Shared.Models
 
             foreach (PropertyInfo pi in properties)
             {
-                QueryStringAttribute attr = pi.GetCustomAttribute(typeof(QueryStringAttribute)) as QueryStringAttribute;
+                QueryStringParameterAttribute attr = pi.GetCustomAttribute(typeof(QueryStringParameterAttribute)) as QueryStringParameterAttribute;
                 if (attr != null)
                 {
                     object objValue = pi.GetValue(this);
