@@ -21,6 +21,17 @@ namespace Audeeble_Shared.Entity.Tiers
         [StringLength(32)]
         public string NomNaissance { get; set; }
 
+        [Required(ErrorMessage = "Le prénom est obligatoire")]
+        [Display(Name = "Prénom")]
+        [Column("PPHY_PRENOM")]
+        [StringLength(32)]
+        public string Prenom { get; set; }
+
+        [Required(ErrorMessage = "La civilité est obligatoire")]
+        [Display(Name = "Civilité")]
+        [Column("PCIV_ID")]
+        public Civilite Civilite { get; set; }
+
         /// <summary>
         /// Constructeur vide.
         /// </summary>

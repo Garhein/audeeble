@@ -24,6 +24,8 @@ namespace Audeeble_API
 
         public DbSet<PersonnePhysique> PersonnesPhysiques { get; set; }
 
+        public DbSet<Civilite> Civilites { get; set; }
+
         #endregion
     }
 }

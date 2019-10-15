@@ -7,6 +7,7 @@
     {
         public string BaseUrl { get; set; }
         public string UrlViewListeTiers { get; set; }
+        public string UrlTiersCivilite { get; set; }
 
         /// <summary>
         /// Constructeur vide.
@@ -15,6 +16,7 @@
         {
             this.BaseUrl            = string.Empty;
             this.UrlViewListeTiers  = string.Empty;
+            this.UrlTiersCivilite   = string.Empty;
         }
     }
 }
