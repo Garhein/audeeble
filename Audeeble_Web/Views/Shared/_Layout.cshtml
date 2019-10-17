@@ -2,15 +2,36 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="~/css/audeeble.css" />
-    
+        <script src="https://kit.fontawesome.com/f664d2775a.js"></script>
+
         @RenderSection("Styles", required: false)
 
         <title>Audeeble &raquo; @ViewData["Title"]</title>
     </head>
     <body>
-        @RenderBody()
+        <div class="wrapper-main">
+            <!-- Start .navbar -->
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a asp-controller="Tiers" asp-action="Index">Liste des tiers</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End .navbar -->
+
+            <!-- Start .wrapper-content -->
+            <main class="wrapper-content">
+                <div class="container-fluid p-0">
+                    @RenderBody()
+                </div>
+            </main>
+            <!-- End .wrapper-content -->
+        </div>
 
         <!-- Scripts -->
         <environment include="Development">

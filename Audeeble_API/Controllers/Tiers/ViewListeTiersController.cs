@@ -1,6 +1,7 @@
 ﻿using Audeeble_Shared.Entity.Tiers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks; 
@@ -53,6 +54,30 @@ namespace Audeeble_API.Controllers.Tiers
                 }
             }
 
+            #region Personnes morales
+   
+            /*
+            IQueryable<ViewListeTiers> queryPersMorale = Enumerable.Empty<ViewListeTiers>().AsQueryable();
+
+            queryPersMorale = queryPersMorale.Where(x => x.EstPersonnePhysique.Equals(false));
+            queryPersMorale = queryPersMorale.Where(x => x.RaisonSociale.Contains("DEEB", StringComparison.InvariantCultureIgnoreCase));
+            */
+
+            #endregion
+
+            #region Personnes physiques
+
+            /*
+            IQueryable<ViewListeTiers> queryPersPhysique = Enumerable.Empty<ViewListeTiers>().AsQueryable();
+
+            queryPersPhysique = queryPersPhysique.Where(x => x.EstPersonnePhysique.Equals(true));
+            queryPersPhysique = queryPersPhysique.Where(x => x.NomNaissance.Contains("llem", StringComparison.InvariantCultureIgnoreCase)
+                                                             ||
+                                                             x.NomUsage.Contains("llem", StringComparison.InvariantCultureIgnoreCase));
+            */
+
+            #endregion
+            
             // Exécution et retour
             return await query.ToListAsync();
         }

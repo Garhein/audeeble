@@ -1,0 +1,22 @@
+﻿@charset 'UTF-8';
+
+/**
+ * Fichier:       _buttons.scss
+ * Description:
+ * Version:       1.0
+ * Copyright:     2019
+ * Auteur:        xavier.villemin at gmail.com
+ **/
+
+
+.btn {
+    // Icône positionnée à gauche
+    .icon-left {
+        margin-right: 0.25rem;
+    }
+
+    // Icône positionnée à droite
+    .icon-right {
+        margin-left: 0.25rem;
+    }
+}

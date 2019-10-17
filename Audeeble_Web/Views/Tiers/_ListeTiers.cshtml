@@ -1,0 +1,19 @@
+﻿@using Audeeble_Shared.Entity.Tiers
+@using System.Collections.Generic
+@model IEnumerable<ViewListeTiers>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ViewListeTiers tiers in Model)
+        {
+            <tr>
+                <td>@tiers.ID</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@model ListeTiersViewModel
+
+@{ ViewData["Title"] = "Liste des tiers"; }
+
+<div class="row">
+    <div class="col-12">
+        <div id="div-criteres-liste-tiers">
+            <partial name="_ListeTiersCriteres" model="@Model.Criteres" />
+        </div>
+        <div id="div-liste-tiers">
+            <div class="btn-group btn-group-sm float-right" role="group" aria-label="Actions">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="far fa-trash-alt"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="far fa-file-pdf"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="far fa-file-excel"></i></button>
+            </div>
+
+            <!-- <partial name="_ListeTiers" model="@Model.ListeTiers" /> -->
+        </div>
+    </div>
+</div>

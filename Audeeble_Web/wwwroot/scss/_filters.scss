@@ -1,0 +1,21 @@
+﻿@charset 'UTF-8';
+
+/**
+ * Fichier:       _filters.scss
+ * Description:
+ * Version:       1.0
+ * Copyright:     2019
+ * Auteur:        xavier.villemin at gmail.com
+ **/
+
+
+.filter-box {
+    background: $gray-200;
+    padding: 0.5rem 0;
+    width: 100%;
+    
+    // Radius
+    &.filter-box-radius {
+        border-radius: $border-radius;
+    }
+}

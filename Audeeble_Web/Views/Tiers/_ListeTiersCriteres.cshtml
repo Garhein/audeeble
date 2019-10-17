@@ -1,0 +1,26 @@
+﻿@using Audeeble_Shared.Models.Tiers
+@model ViewListeTiersCriteresModel
+
+<!-- Start .filter-box -->
+<div class="filter-box filter-box-radius filter-box-shadow">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="RaisonSociale"></label>
+                <input asp-for="RaisonSociale" class="form-control form-control-sm" />
+            </div>
+            <div class="col-3">
+                <label asp-for="Nom"></label>
+                <input asp-for="Nom" class="form-control form-control-sm" />
+            </div>
+            <div class="col-3">
+                <label asp-for="Prenom"></label>
+                <input asp-for="Prenom" class="form-control form-control-sm" />
+            </div>
+            <div class="col-3 text-right">
+                <button type="button" class="btn btn-sm btn-primary"><i class="fas fa-search icon-left"></i>Rechercher</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End .filter-box -->
