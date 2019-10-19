@@ -1,4 +1,4 @@
-using Audeeble_Shared.Options;
+using Audeeble_Shared.Models.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,7 @@ namespace Audeeble_Web
         {
             // Options
             services.AddOptions();
-            services.Configure<OptionsAPI>(this.Configuration.GetSection("ApiSettings"));
+            services.Configure<OptionsApiModel>(this.Configuration.GetSection("ApiSettings"));
             
             // Désactivation des EndPoint pour utiliser les routes standards
             // Activation de MVC en version 3.0
