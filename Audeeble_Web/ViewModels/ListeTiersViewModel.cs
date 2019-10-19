@@ -2,10 +2,10 @@
 using Audeeble_Shared.Models.Tiers;
 using System.Collections.Generic;
 
-namespace Audeeble_Web.Models
+namespace Audeeble_Web.ViewModels
 {
     /// <summary>
-    /// Modèle d'affichage de la liste des tie rs.
+    /// Modèle d'affichage des critères de recherche et de la liste des tiers.
     /// </summary>
     public class ListeTiersViewModel
     {

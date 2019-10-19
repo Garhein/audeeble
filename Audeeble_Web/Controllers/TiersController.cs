@@ -1,7 +1,7 @@
 ﻿using Audeeble_Shared.Entity.Tiers;
+using Audeeble_Shared.Models.Options;
 using Audeeble_Shared.Models.Tiers;
-using Audeeble_Shared.Options;
-using Audeeble_Web.Models;
+using Audeeble_Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -14,9 +14,9 @@ namespace Audeeble_Web.Controllers
 {
     public class TiersController : Controller
     {
-        private readonly OptionsAPI _optionsAPI;
+        private readonly OptionsApiModel _optionsAPI;
 
-        public TiersController(IOptionsMonitor<OptionsAPI> options)
+        public TiersController(IOptionsMonitor<OptionsApiModel> options)
         {
             this._optionsAPI = options.CurrentValue;
         }

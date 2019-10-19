@@ -1,9 +1,9 @@
-﻿namespace Audeeble_Shared.Options
+﻿namespace Audeeble_Shared.Models.Options
 {
     /// <summary>
     /// Options de l'API.
     /// </summary>
-    public class OptionsAPI
+    public class OptionsApiModel
     {
         public string BaseUrl { get; set; }
         public string UrlViewListeTiers { get; set; }
@@ -12,7 +12,7 @@
         /// <summary>
         /// Constructeur vide.
         /// </summary>
-        public OptionsAPI()
+        public OptionsApiModel()
         {
             this.BaseUrl            = string.Empty;
             this.UrlViewListeTiers  = string.Empty;
