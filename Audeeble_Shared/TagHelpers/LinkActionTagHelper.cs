@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace Audeeble_Shared.TagHelpers
 {
     /// <summary>
-    /// Tag helper de création d'un lien d'action contenant uniquement une icône.
+    /// Lien d'action contenant uniquement une icône.
     /// </summary>
-    public abstract class ButtonActionTagHelper : TagHelper
+    public abstract class LinkActionTagHelper : TagHelper
     {
         // =-=-=-
         // Propriétés disponibles sur le tag
@@ -30,8 +30,8 @@ namespace Audeeble_Shared.TagHelpers
         /// </summary>
         /// <param name="context"></param>
         /// <param name="output"></param>
-        /// <param name="className"></param>
-        public void Process(TagHelperContext context, TagHelperOutput output, eButtonActionTagHelper actionType)
+        /// <param name="actionType"></param>
+        public void Process(TagHelperContext context, TagHelperOutput output, eLinkActionTagHelper actionType)
         {
             base.Process(context, output);
 
@@ -39,18 +39,18 @@ namespace Audeeble_Shared.TagHelpers
             // Définition des classes
             // =-=-=-
 
-            List<string> listeClasses = new List<string> { ButtonActionTagHelper.CSTS_TAG_CLASSE_BASE };
+            List<string> listeClasses = new List<string> { LinkActionTagHelper.CSTS_TAG_CLASSE_BASE };
 
             switch (actionType)
             {
-                case eButtonActionTagHelper.EDIT:
+                case eLinkActionTagHelper.EDIT:
                     {
-                        listeClasses.Add(ButtonActionTagHelper.CSTS_TAG_CLASSE_EDIT);
+                        listeClasses.Add(LinkActionTagHelper.CSTS_TAG_CLASSE_EDIT);
                         break;
                     }
-                case eButtonActionTagHelper.DELETE:
+                case eLinkActionTagHelper.DELETE:
                     {
-                        listeClasses.Add(ButtonActionTagHelper.CSTS_TAG_CLASSE_DELETE);
+                        listeClasses.Add(LinkActionTagHelper.CSTS_TAG_CLASSE_DELETE);
                         break;
                     }
                 default:
@@ -105,7 +105,7 @@ namespace Audeeble_Shared.TagHelpers
     /// <summary>
     /// Énumération des actions disponibles.
     /// </summary>
-    public enum eButtonActionTagHelper : int
+    public enum eLinkActionTagHelper : int
     {
         EDIT    = 1,
         DELETE  = 2

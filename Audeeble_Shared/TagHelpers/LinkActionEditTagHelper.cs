@@ -3,9 +3,9 @@
 namespace Audeeble_Shared.TagHelpers
 {
     /// <summary>
-    /// Tag helper créant un lien d'action d'édition contenant uniquement une icône.
+    /// Lien d'action d'édition contenant uniquement une icône.
     /// </summary>
-    public class ButtonActionEditTagHelper : ButtonActionTagHelper
+    public class LinkActionEditTagHelper : LinkActionTagHelper
     {
         /// <summary>
         /// 
@@ -14,7 +14,7 @@ namespace Audeeble_Shared.TagHelpers
         /// <param name="output"></param>
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            base.Process(context, output, eButtonActionTagHelper.EDIT);
+            base.Process(context, output, eLinkActionTagHelper.EDIT);
         }
     }
 }
