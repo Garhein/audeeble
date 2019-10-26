@@ -114,7 +114,7 @@ var ajax = {
 
                 // Réception d'un objet Ajax sérialisé alors qu'une vue HTML est attendue
                 if (response !== null && typeof response === "string" && response.indexOf("ListeErreurs") > 0 && response.indexOf("ValeursRetour") > 0) {
-                    response = JSON.parse(reponse);
+                    response = JSON.parse(response);
                     req.dataType = "json";
                     isHtml = true;
                 }
@@ -125,12 +125,12 @@ var ajax = {
                     var regexDate = /"\\\/(Date\(-?\d+\))\\\/"/g;
 
                     if (typeof response === "string") {                        
-                        response = reponse.replace(regexDate, 'new $1');                        
+                        response = response.replace(regexDate, 'new $1');                        
                         response = eval("(" + response + ")");
                     }
-                    else if (typeof reponse === "object") {                        
+                    else if (typeof response === "object") {                        
                         // TODO
-                        response = parcoursObjetGestionDate(response);
+                        response = AudeebleSanitize_JsonObjectDates(response);
                     }
 
                     // Affectation des éléments de retour à l'objet Ajax
