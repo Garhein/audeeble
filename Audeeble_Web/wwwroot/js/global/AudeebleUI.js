@@ -77,12 +77,41 @@ function AudeebleUI_TableCheckUncheckValue(objClick) {
 
 //#endregion
 
-//#region Message d'attente
+//#region Messages
+
+/**
+ * Affichage d'un message d'erreur à l'aide d'une fenêtre de dialogue générique.
+ * @author  Xavier VILLEMIN
+ * @param   {string} content    Contenu HTML à afficher
+ * @param   {string} title      Titre de la fenêtre
+ */
+function AudeebleUI_DisplayModalError(content, title) {
+    // Initialisation du titre
+    title = (title === null || title === undefined) ? "Message" : title;
+
+    // Duplication du template
+    var template = document.querySelector('#template-generic-modal-error');
+    var clone    = document.importNode(template.content, true);
+
+    // Si la fenêtre de message n'existe pas
+    if (!$("#ui-audeeble-modal-error").length > 0) {
+        var divdialog = $("<div id='ui-audeeble-modal-error'>");
+        $("body").append(divdialog);        
+    }
+
+    // Affectation du contenu
+    $(clone).find(".modal-title").html(title);    
+    $(clone).find(".modal-body").html(content);
+    $("#ui-audeeble-modal-error").html(clone);
+
+    // Affichage de la fenêtre
+    $('#ui-audeeble-modal-error > .modal').modal({ keyboard: false });   
+}
 
 /**
  * Affichage d'un message d'attente.
  * @author  Xavier VILLEMIN
- * @param   {string}    waitingMessage
+ * @param   {string} waitingMessage
  */
 function AudeebleUI_DisplayWaitingMessage(waitingMessage) {
     // Définition des ID

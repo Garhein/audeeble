@@ -150,8 +150,7 @@ var ajax = {
             error: function (jqXHR, textStatus, errorThrown) {                
                 // L'appel Ajax ne précise pas de gestion d'erreur spécifique
                 if (!req.error) {
-                    // TODO
-                    // Une erreur est survenue lors du traitement.                    
+                    AudeebleUI_DisplayModalError("<p>Une erreur est survenue lors de la requête Ajax.</p>", "Erreur");
                 }
 
                 // L'appel Ajax précise une gestion d'erreur spécifique
