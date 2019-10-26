@@ -1,0 +1,21 @@
+[
+  {
+    "outputFileName": "wwwroot/css/audeeble.min.css",
+    "inputFiles": [
+      "wwwroot/css/audeeble.css"      
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/global/audeeble.min.js",
+    "inputFiles": [
+      "wwwroot/js/global/AudeebleSanitize.js",
+      "wwwroot/js/global/AudeebleUI.js",
+      "wwwroot/js/global/AudeebleAjax.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

@@ -3,14 +3,29 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="~/css/audeeble.css" />
-        <script src="https://kit.fontawesome.com/f664d2775a.js"></script>
+        <script src="https://kit.fontawesome.com/f664d2775a.js" crossorigin="anonymous"></script>
+
+        <environment include="Development">
+            <link rel="stylesheet" href="~/css/audeeble.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="~/css/audeeble.min.css" />
+        </environment>
 
         @RenderSection("Styles", required: false)
 
         <title>Audeeble &raquo; @ViewData["Title"]</title>
     </head>
     <body>
+        <div id="ui-waiting">
+            <div id="ui-waiting-msg">
+                <p>
+                    <i class="fas fa-spinner"></i>
+                    <span>Traitement en cours ...</span>
+                </p>
+            </div>
+        </div>
+
         <div class="wrapper-main">
             <!-- Start .navbar -->
             <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -23,7 +38,6 @@
                 </div>
             </nav>
             <!-- End .navbar -->
-
             <!-- Start .wrapper-content -->
             <main class="wrapper-content">
                 <div class="container-fluid p-0">
@@ -38,6 +52,10 @@
             <script src="~/lib/jquery/dist/jquery.js"></script>
             <script src="~/lib/popper/umd/popper.js"></script>
             <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+            <script src="~/js/global/AudeebleSanitize.js"></script>
+            <script src="~/js/global/AudeebleUI.js"></script>
+            <script src="~/js/global/AudeebleAjax.js"></script>
         </environment>
         <environment exclude="Development">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
@@ -53,9 +71,9 @@
                     asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                     crossorigin="anonymous"
                     integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"></script>
+            <script src="~/js/global/audeeble.min.js"></script>
         </environment>
-
+        
         @RenderSection("Scripts", required: false)
-
     </body>
 </html>
