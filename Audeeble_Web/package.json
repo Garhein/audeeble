@@ -1,8 +1,6 @@
 {
   "dependencies": {
     "gulp": "latest",
-    "gulp-sass": "latest",
-    "gulp-csso": "latest",
-    "gulp-rename": "latest"
+    "gulp-sass": "latest"
   }
 }
