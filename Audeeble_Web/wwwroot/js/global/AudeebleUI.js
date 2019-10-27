@@ -105,7 +105,45 @@ function AudeebleUI_DisplayModalError(content, title) {
     $("#ui-audeeble-modal-error").html(clone);
 
     // Affichage de la fenêtre
+    // L'option permet de ne pas fermer la fenêtre avec la touche "Esc"
     $('#ui-audeeble-modal-error > .modal').modal({ keyboard: false });   
+}
+
+/**
+ * Affichage d'un message à l'aide d'un toast générique.
+ * @param {string}  content     Contenu HTML à afficher
+ * @param {string}  title       Titre du toast
+ * @param {boolean} autoHide    Booléen indiquant si le toast se ferme automatiquement
+ * @param {int}     delay       Nombre de secondes au terme desquelles le toast se ferme automatiquement
+ */
+function AudeebleUI_DisplayToast(content, title, autoHide = false, delay = 10) {
+    // Initialisation du titre
+    title = (title === null || title === undefined) ? "Message" : title;
+
+    // Duplication du template
+    var template = document.querySelector('#template-generic-toast-error');
+    var clone    = document.importNode(template.content, true);
+    
+    // Affectation du contenu       
+    $(clone).find(".toast-header-title").html(title);
+    $(clone).find(".toast-header-datetime").html(new Date().toLocaleTimeString());
+    $(clone).find(".toast-body").html(content);
+    $("#ui-audeeble-toasts > div").append(clone);
+
+    // Affichage du toast
+    if (autoHide) {
+        var options = {
+            autohide: true,
+            delay: (delay * 1000)
+        };
+
+        $("#ui-audeeble-toasts > div .toast:last-child").toast(options);
+    }
+    else {
+        $("#ui-audeeble-toasts > div .toast:last-child").toast({ autohide: false });
+    }
+    
+    $("#ui-audeeble-toasts > div .toast:last-child").toast('show');
 }
 
 /**

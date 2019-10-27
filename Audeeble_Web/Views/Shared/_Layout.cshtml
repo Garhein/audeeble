@@ -26,6 +26,12 @@
             </div>
         </div>
 
+        <!-- Start .ui-audeeble-toats -->
+        <div id="ui-audeeble-toasts" aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1200;">
+            <div style="position: absolute; top: 3rem; right: 0.5rem;"></div>
+        </div>
+        <!-- End .ui-audeeble-toats -->
+
         <div class="wrapper-main">
             <!-- Start .navbar -->
             <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -73,7 +79,7 @@
                     integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"></script>
             <script src="~/js/global/audeeble.min.js"></script>
         </environment>
-        
+
         @RenderSection("Scripts", required: false)
 
         <template id="template-generic-modal-error">
@@ -84,13 +90,25 @@
                             <h5 class="modal-title"></h5>
                         </div>
                         <div class="modal-body">
-                            
+
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </template>
+        <template id="template-generic-toast-error">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-alert">
+                    <strong class="mr-auto toast-header-title"></strong>
+                    <small class="text-muted toast-header-datetime"></small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Fermer">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body"></div>
             </div>
         </template>
     </body>
