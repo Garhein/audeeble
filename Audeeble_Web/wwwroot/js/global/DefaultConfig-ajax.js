@@ -150,7 +150,7 @@ var ajax = {
             error: function (jqXHR, textStatus, errorThrown) {                
                 // L'appel Ajax ne précise pas de gestion d'erreur spécifique
                 if (!req.error) {
-                    AudeebleUI_DisplayModalError("<p>Une erreur est survenue lors de la requête Ajax.</p>", "Erreur");
+                    AudeebleUI_DisplayModalError("<p>Une erreur est survenue lors de la requête Ajax.</p>", "Erreur");                    
                 }
 
                 // L'appel Ajax précise une gestion d'erreur spécifique
@@ -159,9 +159,28 @@ var ajax = {
                 }
             },
             complete: function (jqXHR, textStatus) {
+
+                // Afficher erreur si :
+                //  -> ajax.erreur = true
+                //  -> textStatus == timeout
+                //  -> 
+
+                // sucess
+                // notmodified
+                // nocontent
+                // error
+                // timeout
+                // abort
+                // parsererror
+
                 // Retrait du message d'attente
                 if (req.affMessageAttente) {
                     // TODO
+                }
+
+                // L'appel Ajax précise le traitement à exécuter après l'envoi (réussi ou non)
+                if (req.complete) {
+                    req.complete(jqXHR, textStatus);
                 }
             }
         });

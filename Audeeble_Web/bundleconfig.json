@@ -10,7 +10,9 @@
     "inputFiles": [
       "wwwroot/js/global/AudeebleSanitize.js",
       "wwwroot/js/global/AudeebleUI.js",
-      "wwwroot/js/global/AudeebleAjax.js"
+      "wwwroot/js/global/DefaultConfig-input.js",
+      "wwwroot/js/global/DefaultConfig-init.js",
+      "wwwroot/js/global/DefaultConfig-ajax.js"
     ],
     "minify": {
       "enabled": true,

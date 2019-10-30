@@ -28,7 +28,7 @@
 
 
   <ItemGroup>
-    <Content Update="wwwroot\js\global\AudeebleAjax.js">
+    <Content Update="wwwroot\js\global\DefaultConfig-ajax.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\js\global\AudeebleSanitize.js">
