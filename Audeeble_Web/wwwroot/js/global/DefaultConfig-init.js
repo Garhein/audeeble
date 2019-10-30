@@ -6,8 +6,8 @@ $(document).ready(function () {
     /** Initialisations au chargement de la page **/
     /**********************************************/
 
-    // Initialisation des cases à cocher permettant de cocher/décocher tous les éléments
-    AudeebleUI_InitializeCheckBoxAll("body");
+    // Titres des éléments
+    AudeebleUI_InitializeTitles("body");
 
 
     /*********************************************************************************/
@@ -19,8 +19,8 @@ $(document).ready(function () {
         var cible = e.target;
 
         if (!$(cible).hasClass("insertedInitialized")) {
-            // Initialisation des cases à cocher permettant de cocher/décocher tous les éléments
-            AudeebleUI_InitializeCheckBoxAll(cible);
+            // Titres des éléments
+            AudeebleUI_InitializeTitles(cible);
 
             // Ajout de la classe indiquant que l'élément a été initialisé
             $(cible).addClass("insertedInitialized");
