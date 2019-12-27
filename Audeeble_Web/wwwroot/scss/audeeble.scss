@@ -20,7 +20,7 @@
 // Import de Bootstrap
 //
 
-@import "../lib/bootstrap/scss/bootstrap";
+@import "../lib/bootstrap/scss/bootstrap.scss";
 
 //
 // Variables personnalisées
@@ -32,9 +32,8 @@
 // Imports
 //
 
-// TODO: mixins (box-shadow + disabled)
-
 @import "_containers.scss";
 @import "_buttons.scss";
 @import "_filters.scss";
 @import "_forms.scss";
+@import "_tables.scss";

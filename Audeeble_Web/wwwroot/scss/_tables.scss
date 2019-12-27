@@ -1,0 +1,32 @@
+﻿@charset 'UTF-8';
+
+/**
+ * Fichier:       _tables.scss
+ * Description:
+ * Version:       1.0
+ * Copyright:     2019
+ * Auteur:        xavier.villemin at gmail.com
+ **/
+
+
+//
+// Table personnalisée
+//
+
+.table-custom {
+    @extend .table;
+    @extend .table-sm;
+    @extend .table-hover;
+    @extend .table-striped;
+    @extend .table-bordered;
+}
+
+// 
+// Classes utilitaires
+//
+
+.ui-col-icon,
+.ui-col-check {
+    text-align: center;
+    width: 2rem;
+}

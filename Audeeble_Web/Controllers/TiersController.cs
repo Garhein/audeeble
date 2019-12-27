@@ -1,6 +1,7 @@
 ﻿using Audeeble_Shared.Entity.Tiers;
 using Audeeble_Shared.Models.Options;
 using Audeeble_Shared.Models.Tiers;
+using Audeeble_Shared.Utils;
 using Audeeble_Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -33,6 +34,43 @@ namespace Audeeble_Web.Controllers
             return View(new ListeTiersViewModel(criteres, listeTiers));
         }
 
+
+        [HttpPost]
+        public async Task<PartialViewResult> Rechercher(ViewListeTiersCriteresModel criteres)
+        {            
+            
+            IEnumerable<ViewListeTiers> listeTiers = await this.GetListeTiersAsync(criteres);            
+
+            return PartialView("_ListeTiers", listeTiers);
+        }
+
+        [HttpGet]
+        public JsonResult AjaxRequest()
+        {
+            AjaxResponse ajax  = new AjaxResponse();
+
+            try
+            {
+                bool ajaxBool       = true;
+                string ajaxString   = "Ajax request receive Json !";
+                DateTime ajaxDate   = DateTime.Now.Date.AddDays(3);
+                string ajaxStrDate  = "/Date(1572083581000)/";
+                ajax.ValeursRetour  = new { ajaxBool, ajaxString, ajaxDate, ajaxStrDate };
+
+                ajax.AddError("Erreur manuelle !", false);
+
+                int i = 10;
+                int j = 0;
+                int k = i / j;
+            }
+            catch (Exception ex)
+            {
+                ajax.AddException(ex);
+            }
+
+            return Json(ajax);
+        }
+
         /// <summary>
         /// Exécution de la recherche des tiers.
         /// </summary>
@@ -60,6 +98,6 @@ namespace Audeeble_Web.Controllers
             }
 
             return listeTiers; 
-        }
+        }       
     }
 }

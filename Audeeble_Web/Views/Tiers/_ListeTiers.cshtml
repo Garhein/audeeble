@@ -2,18 +2,70 @@
 @using System.Collections.Generic
 @model IEnumerable<ViewListeTiers>
 
-<table>
-    <thead>
+<div class="btn-group btn-group-sm float-right mb-1" role="group" aria-label="Actions">
+    <a class="ui-btn-add btn btn-secondary" asp-controller="Tiers" asp-action="Create"><i class="fas fa-plus"></i></a>
+    <button type="button" class="ui-btn-delete btn btn-secondary"><i class="far fa-trash-alt"></i></button>
+    <button type="button" class="ui-btn-exp-pdf btn btn-secondary"><i class="far fa-file-pdf"></i></button>
+    <button type="button" class="ui-btn-exp-excel btn btn-secondary"><i class="far fa-file-excel"></i></button>
+</div>
+
+<button type="button" class="btn btn-success mb-1" onclick="TestAjax()">Test Ajax !</button>
+
+<table class="table-custom">
+    <thead class="thead-dark">
         <tr>
-            <th>ID</th>
+            <th scope="col" class="ui-col-check">
+                <input type="checkbox" onchange="AudeebleUI_TableCheckUncheckAll(this)" />
+            </th>
+            <th scope="col" class="ui-col-icon"></th>
+            <th scope="col" class="ui-col-icon"></th>
+            <th scope="col" class="ui-col-icon"></th>     
+            
+            <th scope="col">Raison sociale</th>
+            <th scope="col">Civilité</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
         </tr>
     </thead>
     <tbody>
         @foreach (ViewListeTiers tiers in Model)
         {
-            <tr>
-                <td>@tiers.ID</td>
-            </tr>
+        <tr>
+            <td class="ui-col-check">
+                <input type="checkbox" value="@tiers.ID" onchange="AudeebleUI_TableCheckUncheckValue(this)" />
+            </td>
+            <td class="ui-col-icon">
+                @if (tiers.EstPersonnePhysique)
+                {
+                    <i class="fas fa-user"></i>
+                }
+                else
+                {
+                    <i class="fas fa-building"></i>
+                }
+            </td>
+            <td class="ui-col-icon">                
+                <link-action controller-name="Tiers"
+                             action-name="Edit"
+                             route-id="@tiers.ID"
+                             fa-icon="@eFontAwesomeIcon.EDIT"
+                             fa-style="@eFontAwesomeStyle.SOLID"
+                             class="ui-link-edit"></link-action>
+            </td>
+            <td class="ui-col-icon">
+                <link-action controller-name="Tiers"
+                             action-name="Delete"
+                             route-id="@tiers.ID"
+                             fa-icon="@eFontAwesomeIcon.DELETE"
+                             fa-style="@eFontAwesomeStyle.SOLID"
+                             class="ui-link-delete"></link-action>
+            </td>
+                        
+            <td>@tiers.RaisonSociale</td>
+            <td>@tiers.CiviliteLibelle</td>
+            <td>@tiers.Prenom</td>
+            <td>@tiers.NomUsage</td>
+        </tr>
         }
     </tbody>
 </table>
